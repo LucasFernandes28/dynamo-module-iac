@@ -1,0 +1,33 @@
+# === Terraform ===
+# Arquivos de estado locais (sempre ficam no backend remoto)
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Planos de execução
+*.tfplan
+*.tfplan.*
+
+# Overrides (configs locais que não devem ir para o repo)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Configuração local do Terraform
+.terraform/
+.terraform.lock.hcl
+
+# === IDEs / SO ===
+# VS Code
+.vscode/
+# IntelliJ / JetBrains
+.idea/
+*.iml
+# MacOS
+.DS_Store
+# Linux
+*~
+# Windows
+Thumbs.db
