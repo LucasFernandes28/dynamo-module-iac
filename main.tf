@@ -1,14 +1,14 @@
 resource "aws_dynamodb_table" "this" {
-  for_each = { for tbl in var.tables : tbl.name => tbl }
 
-  name         = each.value.name
-  hash_key     = each.value.hash_key
+  name         = var.name
+  hash_key     = var.hash_key
   billing_mode = "PROVISIONED"
-  read_capacity  = each.value.read_capacity
-  write_capacity = each.value.write_capacity
+  deletion_protection_enabled = true
+  read_capacity  = var.read_capacity
+  write_capacity = var.write_capacity
 
   attribute {
-    name = each.value.hash_key
+    name = var.hash_key
     type = "S"
   }
 
