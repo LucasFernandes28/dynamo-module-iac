@@ -18,14 +18,6 @@ variable "write_capacity" {
   description = "Capacidade de escrita da tabela DynamoDB"
 }
 
-variable "tables" {
-  type = list(object({
-    name           = string
-    hash_key       = string
-    read_capacity  = number
-    write_capacity = number
-  }))
-}
 
 variable "tags" {
   type        = map(string)
