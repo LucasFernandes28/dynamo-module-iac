@@ -8,16 +8,6 @@ variable "hash_key" {
   description = "Chave primária da tabela DynamoDB"
 }
 
-variable "read_capacity" {
-  type        = number
-  description = "Capacidade de leitura da tabela DynamoDB"
-}
-
-variable "write_capacity" {
-  type        = number
-  description = "Capacidade de escrita da tabela DynamoDB"
-}
-
 variable "billing_mode" {
   type        = string
   description = "Modelo de cobrança"
