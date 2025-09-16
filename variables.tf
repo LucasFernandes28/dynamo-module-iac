@@ -8,6 +8,14 @@ variable "hash_key" {
   description = "Chave primária da tabela DynamoDB"
 }
 
+variable "attributes" {
+  type = list(object({
+    name = string
+    type = string # S = String, N = Number, B = Binary
+  }))
+  description = "Lista de atributos da tabela"
+}
+
 variable "billing_mode" {
   type        = string
   description = "Modelo de cobrança"

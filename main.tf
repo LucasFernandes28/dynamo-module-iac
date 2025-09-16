@@ -5,9 +5,12 @@ resource "aws_dynamodb_table" "this" {
   billing_mode = var.billing_mode
   deletion_protection_enabled = var.deletion_protection_enabled
 
-  attribute {
-    name = var.hash_key
-    type = "S"
+  dynamic "attribute" {
+    for_each = var.attributes
+    content {
+      name = attribute.value.name
+      type = attribute.value.type
+    }
   }
 
   tags = merge(
