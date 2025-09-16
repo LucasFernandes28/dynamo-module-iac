@@ -2,8 +2,8 @@ resource "aws_dynamodb_table" "this" {
 
   name         = var.name
   hash_key     = var.hash_key
-  billing_mode = "PROVISIONED"
-  deletion_protection_enabled = true
+  billing_mode = var.billing_mode
+  deletion_protection_enabled = var.deletion_protection_enabled
   read_capacity  = var.read_capacity
   write_capacity = var.write_capacity
 
@@ -12,5 +12,10 @@ resource "aws_dynamodb_table" "this" {
     type = "S"
   }
 
-  tags = var.tags
+  tags = merge(
+    {
+      Name = var.name
+    },
+    var.tags
+  )
 }
