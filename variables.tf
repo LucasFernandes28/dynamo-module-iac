@@ -15,7 +15,7 @@ variable "attributes" {
     type = string # S = String, N = Number, B = Binary
   }))
   description = "Lista de atributos da tabela"
-  default = { name = "LockID", type = "S" }
+  default = [{ name = "LockID", type = "S" }]
 }
 
 variable "billing_mode" {
