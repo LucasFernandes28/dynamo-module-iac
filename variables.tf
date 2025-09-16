@@ -6,6 +6,7 @@ variable "name" {
 variable "hash_key" {
   type        = string
   description = "Chave primária da tabela DynamoDB"
+  default = "LockID"
 }
 
 variable "attributes" {
